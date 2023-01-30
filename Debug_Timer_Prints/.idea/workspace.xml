@@ -21,9 +21,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c51dc2e4-c599-4f57-961e-6c0262fac078" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMakeLists_template.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UART2_Example/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../UART2_Example/Src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/main.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/main.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Debug_Timer_Prints.elf.dir/Src/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Debug_Timer_Prints.elf.dir/Src/main.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Debug_Timer_Prints.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Debug_Timer_Prints.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Debug_Timer_Prints.elf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Debug_Timer_Prints.elf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Debug_Timer_Prints.hex" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Debug_Timer_Prints.hex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Debug_Timer_Prints.map" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Debug_Timer_Prints.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +102,7 @@
       <workItem from="1675104490637" duration="3754000" />
       <workItem from="1675108290678" duration="644000" />
       <workItem from="1675108948354" duration="335000" />
-      <workItem from="1675109443732" duration="2254000" />
+      <workItem from="1675109443732" duration="4144000" />
     </task>
     <servers />
   </component>
