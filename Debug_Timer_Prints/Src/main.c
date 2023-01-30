@@ -99,7 +99,6 @@ void SystemClockConfig(uint32_t clock_freq)
             Osc_Init.PLL.PLLN = 50;
             Osc_Init.PLL.PLLP = RCC_PLLP_DIV2;
             Osc_Init.PLL.PLLQ = 2;
-            Osc_Init.PLL.PLLR = 2;
             Clock_Init.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                                    |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
             Clock_Init.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
@@ -113,7 +112,6 @@ void SystemClockConfig(uint32_t clock_freq)
             Osc_Init.PLL.PLLN = 84;
             Osc_Init.PLL.PLLP = RCC_PLLP_DIV2;
             Osc_Init.PLL.PLLQ = 2;
-            Osc_Init.PLL.PLLR = 2;
             Clock_Init.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                                    |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
             Clock_Init.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
@@ -127,7 +125,6 @@ void SystemClockConfig(uint32_t clock_freq)
             Osc_Init.PLL.PLLN = 120;
             Osc_Init.PLL.PLLP = RCC_PLLP_DIV2;
             Osc_Init.PLL.PLLQ = 2;
-            Osc_Init.PLL.PLLR = 2;
             Clock_Init.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                                    |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
             Clock_Init.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
