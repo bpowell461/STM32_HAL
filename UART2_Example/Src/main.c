@@ -7,7 +7,7 @@ void Error_Handler(void);
 
 UART_HandleTypeDef huart2;
 
-static char *user_data = "Hello World\r\n";
+static char *user_data = "Hello World\n\r";
 
 int main(void) {
     HAL_Init();

@@ -1,0 +1,5 @@
+"C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/mingw64/bin/mingw32-make.exe" "-DCMAKE_C_COMPILER=C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gcc.exe" "-DCMAKE_CXX_COMPILER=C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-g++.exe" -G "CodeBlocks - Unix Makefiles" -S C:\git\STM32_HAL\STM32_HAL\Debug_Timer_Prints -B C:\git\STM32_HAL\STM32_HAL\Debug_Timer_Prints\cmake-build-debug
+-- Minimal optimization, debug info included
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/git/STM32_HAL/STM32_HAL/Debug_Timer_Prints/cmake-build-debug
