@@ -55,3 +55,4 @@ dkms.conf
 .idea
 .vs
 cmake-build-debug/
+workspace.xml

@@ -1,3 +1,0 @@
-C:/git/STM32_HAL/STM32_HAL/Debug_Timer_Prints/cmake-build-debug/CMakeFiles/Debug_Timer_Prints.elf.dir
-C:/git/STM32_HAL/STM32_HAL/Debug_Timer_Prints/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/git/STM32_HAL/STM32_HAL/Debug_Timer_Prints/cmake-build-debug/CMakeFiles/rebuild_cache.dir
