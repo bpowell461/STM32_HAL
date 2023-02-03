@@ -121,7 +121,7 @@ void Error_handler(void)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-    sprintf(msg, "DEBUG: Time <%f>\n\r", (float) secondCount);
+    sprintf(msg, "DEBUG: Time <%.2f>\n\r", (float) secondCount);
     HAL_UART_Transmit(&huart2, (uint8_t *)&msg, sizeof(msg), HAL_MAX_DELAY);
     secondCount++;
 }
