@@ -13,6 +13,7 @@
 
 void UART2_Init(void);
 void CAN1_Init(void);
+void CAN1_Tx(void);
 void Error_handler(void);
 void Print_MCU_Startup_Banner(void);
 void TIMER6_Init(float updateEventMS);
@@ -20,7 +21,7 @@ void TIMER6_Init(float updateEventMS);
 void SystemClockConfig_HSE(uint8_t clock_freq);
 
 UART_HandleTypeDef huart2;
-CAN_HandleTypeDef 
+CAN_HandleTypeDef hcan1;
 
 TIM_HandleTypeDef hTimer6;
 
@@ -31,7 +32,7 @@ uint8_t PrintAt1HZ = 0;
 int main(void)
 {
 	HAL_Init();
-    SystemClockConfig_HSE(SYS_CLOCK_FREQ_50_MHZ);
+    //SystemClockConfig_HSE(SYS_CLOCK_FREQ_50_MHZ);
 	UART2_Init();
     TIMER6_Init(INTERVAL_1HZ);
 
@@ -47,6 +48,7 @@ int main(void)
         if(PrintAt1HZ)
         {
             sprintf(msg, "DEBUG: Time <%.2f>\n\r", (float) secondCount);
+            CAN1_Tx();
             HAL_UART_Transmit(&huart2, (uint8_t *)&msg, sizeof(msg), HAL_MAX_DELAY);
             secondCount++;
             PrintAt1HZ = 0;
@@ -77,7 +79,54 @@ void UART2_Init(void)
 
 void CAN1_Init(void)
 {
+    hcan1.Instance = CAN1;
+    hcan1.Init.Mode = CAN_MODE_LOOPBACK;
+    hcan1.Init.AutoRetransmission = DISABLE;
+    hcan1.Init.AutoWakeUp = DISABLE;
+    hcan1.Init.ReceiveFifoLocked = DISABLE;
+    hcan1.Init.TimeTriggeredMode = DISABLE;
+    hcan1.Init.TransmitFifoPriority = DISABLE;
 
+    // Bit Timing
+    hcan1.Init.Prescaler = 5;
+    hcan1.Init.SyncJumpWidth = CAN_SJW_1TQ;
+    hcan1.Init.TimeSeg1 = CAN_BS1_8TQ;
+    hcan1.Init.TimeSeg2 = CAN_BS2_1TQ;
+
+    // Sleep Mode to Initialization Mode
+    if (HAL_CAN_Init(&hcan1) != HAL_OK)
+    {
+        Error_handler();
+    }
+
+    // Move from Initialization mode to Normal mode
+    if (HAL_CAN_Start(&hcan1) != HAL_OK)
+    {
+        Error_handler();
+    }
+}
+
+void CAN1_Tx(void)
+{
+    CAN_TxHeaderTypeDef  TX_Header;
+    uint32_t CAN_TX_Mailbox;
+
+    char* message = "Hello!";
+
+    TX_Header.DLC = 6;
+    TX_Header.StdId = 0x65D;
+    TX_Header.IDE = CAN_ID_STD;
+    TX_Header.RTR = CAN_RTR_DATA;
+
+    if (HAL_CAN_AddTxMessage(&hcan1, &TX_Header, (uint8_t *) &message, &CAN_TX_Mailbox) != HAL_OK)
+    {
+        Error_handler();
+    }
+
+    while(HAL_CAN_IsTxMessagePending(&hcan1, CAN_TX_Mailbox));
+
+    sprintf(msg, "CAN Message Transmitted\r\n");
+    HAL_UART_Transmit(&huart2, (uint8_t *)&msg, sizeof(msg), HAL_MAX_DELAY);
 }
 
 void TIMER6_Init(float updateEventMS)
